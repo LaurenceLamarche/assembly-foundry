@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { Cpu, Shield, Zap, Wrench } from 'lucide-react'
 
 const features = [
@@ -17,7 +16,7 @@ const features = [
   {
     icon: Shield,
     title: 'Full Ownership',
-    description: 'No black boxes. You own the code, the config, the data. We\'re your technical partner, not a gatekeeper.'
+    description: 'No black boxes. You own the code, the config, the data. We&apos;re your technical partner, not a gatekeeper.'
   },
   {
     icon: Wrench,
@@ -30,29 +29,20 @@ export default function Solution() {
   return (
     <section className="py-24 md:py-32 bg-foundry-black">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <span className="text-foundry-gold font-display text-sm tracking-wider uppercase">Our Approach</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mt-4">
             Built different. Managed completely.
           </h2>
           <p className="text-foundry-muted text-lg mt-4 max-w-2xl mx-auto">
-            We're not a SaaS company masquerading as a service. We're builders who happen to be obsessive about operations.
+            We&apos;re not a SaaS company masquerading as a service. We&apos;re builders who happen to be obsessive about operations.
           </p>
-        </motion.div>
+        </div>
         
         <div className="grid md:grid-cols-2 gap-6">
           {features.map((feature, i) => (
-            <motion.div
+            <div
               key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
               className="group p-8 rounded-2xl bg-foundry-charcoal border border-foundry-steel hover:border-foundry-gold/40 hover:bg-foundry-graphite transition-all duration-300"
             >
               <div className="flex items-start gap-6">
@@ -64,7 +54,7 @@ export default function Solution() {
                   <p className="text-foundry-muted leading-relaxed">{feature.description}</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

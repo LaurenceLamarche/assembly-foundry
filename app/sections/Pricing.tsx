@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { Check, ArrowRight, Server } from 'lucide-react'
 
 const tiers = [
@@ -59,12 +58,7 @@ export default function Pricing() {
   return (
     <section id="pricing" className="py-24 md:py-32 bg-foundry-black">
       <div className="max-w-7xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <span className="text-foundry-gold font-display text-sm tracking-wider uppercase">Investment</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mt-4">
             Clear pricing. Real outcomes.
@@ -72,16 +66,12 @@ export default function Pricing() {
           <p className="text-foundry-muted text-lg mt-4 max-w-2xl mx-auto">
             All tiers include hardware, hosting, and our commitment to making it work.
           </p>
-        </motion.div>
+        </div>
         
         <div className="grid md:grid-cols-3 gap-8">
           {tiers.map((tier, i) => (
-            <motion.div
+            <div
               key={tier.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
               className={`relative rounded-2xl p-8 ${
                 tier.popular
                   ? 'bg-foundry-gold text-foundry-black'
@@ -137,23 +127,18 @@ export default function Pricing() {
                 {tier.cta}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
-            </motion.div>
+            </div>
           ))}
         </div>
         
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
+        <div className="mt-16 text-center">
           <p className="text-foundry-muted">
             Monthly hosting: $297 (Foundation) / $597 (Growth) / Custom (Enterprise)
           </p>
           <p className="text-foundry-muted text-sm mt-2">
             Covers hardware maintenance, monitoring, security updates, and 99.9% uptime SLA.
           </p>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

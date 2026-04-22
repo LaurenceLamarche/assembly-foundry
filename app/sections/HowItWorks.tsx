@@ -1,7 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
-
 const steps = [
   {
     number: '01',
@@ -34,26 +32,17 @@ export default function HowItWorks() {
   return (
     <section id="how-it-works" className="py-24 md:py-32 bg-foundry-charcoal">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <span className="text-foundry-gold font-display text-sm tracking-wider uppercase">The Process</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mt-4">
             How we work
           </h2>
-        </motion.div>
+        </div>
         
         <div className="space-y-0">
           {steps.map((step, i) => (
-            <motion.div
+            <div
               key={step.number}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
               className="relative flex gap-8 py-8 border-b border-foundry-steel last:border-b-0"
             >
               <div className="shrink-0 w-16">
@@ -63,7 +52,7 @@ export default function HowItWorks() {
                 <h3 className="font-display text-2xl font-semibold mb-2">{step.title}</h3>
                 <p className="text-foundry-muted text-lg leading-relaxed">{step.description}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

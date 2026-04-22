@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 
@@ -49,13 +48,9 @@ function FAQItem({ faq, isOpen, onClick }: { faq: typeof faqs[0], isOpen: boolea
         <span className="font-display text-lg font-semibold pr-8">{faq.question}</span>
         <ChevronDown className={`w-5 h-5 text-foundry-gold shrink-0 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </button>
-      <motion.div
-        initial={false}
-        animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
-        className="overflow-hidden"
-      >
+      <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
         <p className="pb-6 text-foundry-muted leading-relaxed">{faq.answer}</p>
-      </motion.div>
+      </div>
     </div>
   )
 }
@@ -66,24 +61,14 @@ export default function FAQ() {
   return (
     <section className="py-24 md:py-32 bg-foundry-charcoal">
       <div className="max-w-3xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <span className="text-foundry-gold font-display text-sm tracking-wider uppercase">FAQ</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mt-4">
             Questions? Answered.
           </h2>
-        </motion.div>
+        </div>
         
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="bg-foundry-graphite rounded-2xl p-8 border border-foundry-steel"
-        >
+        <div className="bg-foundry-graphite rounded-2xl p-8 border border-foundry-steel">
           {faqs.map((faq, i) => (
             <FAQItem
               key={i}
@@ -92,7 +77,7 @@ export default function FAQ() {
               onClick={() => setOpenIndex(openIndex === i ? null : i)}
             />
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   )

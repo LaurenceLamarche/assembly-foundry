@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { ArrowRight, Calendar } from 'lucide-react'
 
 export default function CTA() {
@@ -12,12 +11,7 @@ export default function CTA() {
       <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-foundry-warm/5 rounded-full blur-[80px]" />
       
       <div className="max-w-4xl mx-auto px-6 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
+        <div className="text-center">
           <span className="inline-flex items-center gap-2 text-foundry-gold mb-6">
             <Calendar className="w-5 h-5" />
             <span className="font-display">Limited spots available</span>
@@ -29,7 +23,7 @@ export default function CTA() {
           </h2>
           
           <p className="text-foundry-muted text-lg md:text-xl max-w-2xl mx-auto mb-10">
-            Let's talk about what you're dealing with and whether Assembly is the right fit. 
+            Let&apos;s talk about what you&apos;re dealing with and whether Assembly is the right fit. 
             No pitch decks. No pressure. Just a real conversation.
           </p>
           
@@ -54,7 +48,7 @@ export default function CTA() {
           <p className="text-foundry-muted text-sm mt-8">
             Response time: Usually same day, always within 24 hours.
           </p>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

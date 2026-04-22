@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  ::selection {
+    background: rgba(201, 164, 106, 0.3);
+    color: #f5f0e8;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-foundry-gold via-foundry-warm to-foundry-gold;
+    background-size: 200% auto;
+  }
+  
+  .glow-gold {
+    box-shadow: 0 0 40px rgba(201, 164, 106, 0.15);
+  }
+}

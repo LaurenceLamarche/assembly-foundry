@@ -21,7 +21,7 @@ const steps = [
   {
     number: '04',
     title: 'Deployment',
-    description: 'Hardware provisioned, agents deployed, monitoring active. We handle the infra so you don't have to.'
+    description: "Hardware provisioned, agents deployed, monitoring active. We handle the infra so you don't have to.",
   },
   {
     number: '05',
